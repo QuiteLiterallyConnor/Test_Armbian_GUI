@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsiveness Test</title>
-    <style>
-        /* Simple CSS for button styling */
-        button {
-            margin: 5px;
-            padding: 10px;
-            font-size: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="public/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="public/index.css">
 </head>
 <body>
 
@@ -22,12 +16,9 @@
 <button onclick="changeText('Button 2 clicked')">Button 2</button>
 <button onclick="changeText('Button 3 clicked')">Button 3</button>
 
-<script>
-    // Function to change the text of the paragraph
-    function changeText(text) {
-        document.getElementById('responseText').innerText = text;
-    }
-</script>
+<script src="public/jquery/jquery-3.7.1.min.js"></script>
+<script src="public/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="public/index.js"></script>
 
 </body>
 </html>
