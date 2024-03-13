@@ -8,7 +8,7 @@ import (
 func main() {
     htmlFilePath := "./public/index.html"
     
-    cmd := exec.Command("chromium-browser", "--kiosk", htmlFilePath)
+    cmd := exec.Command("chromium-browser", "--kiosk", "--no-sandbox", htmlFilePath)
     
     output, err := cmd.CombinedOutput()
     if err != nil {
