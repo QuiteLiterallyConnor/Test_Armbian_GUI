@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML Example</title>
+    <title>Responsiveness Test</title>
+    <style>
+        /* Simple CSS for button styling */
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <h2>WOOOOOO IT WORKS!!!!!!!</h2>
-    <p>This is a simple HTML file with basic elements to get you started. You can customize this template by adding more elements and styles to it.</p>
-    <p>Learn more about HTML and web development at <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN Web Docs</a>.</p>
+
+<h2>Responsiveness Test</h2>
+<p id="responseText">Click any button to change this text.</p>
+
+<button onclick="changeText('Button 1 clicked')">Button 1</button>
+<button onclick="changeText('Button 2 clicked')">Button 2</button>
+<button onclick="changeText('Button 3 clicked')">Button 3</button>
+
+<script>
+    // Function to change the text of the paragraph
+    function changeText(text) {
+        document.getElementById('responseText').innerText = text;
+    }
+</script>
+
 </body>
 </html>

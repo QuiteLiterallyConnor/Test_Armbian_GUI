@@ -1,19 +1,32 @@
 package main
 
 import (
-    "fmt"
+    "github.com/gin-gonic/gin"
     "os/exec"
+    "runtime"
 )
 
 func main() {
-    htmlFilePath := "./public/index.html"
-    
-    cmd := exec.Command("chromium-browser", "--kiosk", "--no-sandbox", htmlFilePath)
-    
-    output, err := cmd.CombinedOutput()
-    if err != nil {
-        fmt.Printf("Error running command: %v\n", err)
+    r := gin.Default()
+
+    r.GET("/", func(c *gin.Context) {
+        c.File("public/index.html")
+    })
+
+    port := "8080"
+    url := "http://localhost:" + port
+
+    go func() {
+        if err := r.Run(":" + port); err != nil {
+            panic(err)
+        }
+    }()
+
+    runtime.Gosched()
+
+    cmd := exec.Command("chromium-browser", "--no-sandbox", "--kiosk", url)
+    if err := cmd.Start(); err != nil {
+        panic(err)
     }
-    
-    fmt.Printf("Command output: %s\n", output)
 }
+
