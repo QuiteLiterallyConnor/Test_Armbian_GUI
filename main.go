@@ -15,7 +15,7 @@ func main() {
 
     // Serve the HTML file.
     r.GET("/", func(c *gin.Context) {
-        c.File("./index.html") // Ensure you have an index.html file in the same directory.
+        c.File("public/index.html") // Ensure you have an index.html file in the same directory.
     })
 
     // Determine the port to listen on. Ensure this matches the URL you open in Chromium.
